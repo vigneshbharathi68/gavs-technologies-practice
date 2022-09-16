@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <div className="container inverse full-bleed">
+    <div className="container">
       {/* adsfasdfasdf */}
       <Header title="Task Trackers" />
       <AddTask onAdd={ onAddTask }/>

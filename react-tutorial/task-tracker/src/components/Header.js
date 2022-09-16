@@ -2,10 +2,10 @@ import Button from './Button'
 
 function header ({title}) {
   return (
-    <div>
+    <header>
         <h1 className="">{ title }</h1>
         <Button />
-    </div>
+    </header>
   )
 }
 
