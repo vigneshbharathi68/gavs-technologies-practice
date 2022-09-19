@@ -11,7 +11,7 @@ const EffectTutorial = () => {
             console.log("ÄPI WAS CALLED")
             setData(response.data[0].email)
         })
-    })
+    }, []);
 
     return (
         <div>
