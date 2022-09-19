@@ -11,21 +11,34 @@ body {
 
 .card-layout {
   display: flex;
+  flex-wrap: wrap;
   padding: 1rem;
-  border: 1px solid green;
-  gap: 1rem;
-  justify-content: center;
-  align-items: start;
+  gap: 2.5rem;
+  /* justify-content: start; */
+  /* align-items: start; */
   height: 90vh;
 }
 
 .card-container {
-  border: 1px solid black;
- box-shadow: 5px 5px;
- width: 30%;
- cursor: pointer;
+  --shadow-size: 10px;
+  --shadow-at-hover: 5px;
+  border: 1.5px solid black;
+  padding: 1rem;
+  box-shadow: var(--shadow-size) var(--shadow-size);
+  width: 30%;
+  cursor: pointer;
+  transition: box-shadow .2s, transform .2s;
 }
 
-.card-container::hover {
- background: red;
+.card-container:hover {
+  box-shadow: var(--shadow-at-hover) var(--shadow-at-hover);
+  transform: translateX(var(--shadow-at-hover)) translateY(var(--shadow-at-hover));
+}
+
+.card .title {
+  font-size: 10px;
+}
+
+.card .description {
+
 }
