@@ -1,5 +1,6 @@
 import './App.css';
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
+import { Link } from 'react-router-dom';
 import UseState from './UseState/StateTutorial';
 import UseReduce from './UseReducer/ReducerTutorial'
 import UseEffect from './UseEffect/EffectTutorial';
@@ -11,13 +12,14 @@ import UseMemo from './UseMemo/MemoTutorial';
 import UseCallback from './UseCallback/CallbackTutorial';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Home } from './pages/Home';
+import HomeButton from './components/HomeButton'
 
 function App() {
   return (
     <div className="App">
       {/* <UseState /> */}
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/use-state" element={<UseState />} />
@@ -30,6 +32,10 @@ function App() {
           <Route path="/use-memo" element={<UseMemo />} />
           <Route path="/use-callback" element={<UseCallback />} />
         </Routes>
+        <Link to="/">
+          <HomeButton />
+        </Link>
+
       </Router>
 
     </div>
