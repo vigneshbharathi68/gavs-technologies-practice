@@ -12,7 +12,7 @@ export class EventService {
   getEvents() {
     return this.http.get<any>(this._eventsUrl)
   }
-  specialEvents() {
+  getSpecialEvents() {
     return this.http.get<any>(this._specialEventsUrl)
   }
 }

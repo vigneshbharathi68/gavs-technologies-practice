@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const jwt = require('jsonwebtoken');
 
 const mongoose = require('mongoose');
 const db = 'mongodb+srv://mongo:1234@cluster0.hd3ez.mongodb.net/?retryWrites=true&w=majority'
@@ -16,6 +17,21 @@ router.get('/', (req, res) => {
     res.send('From API route');
 })
 
+router.post('/register', (req, res) => {
+    let userData = req.body;
+    let user = new User(userData);
+    user.save((error, registeredUser) => {
+        if (error) {
+            console.log(error);
+        } else {
+            let payload = { subject: registeredUser._id };
+            // let token = jwt.sign(payload, 'secretKey');
+            // console.log("Token generated successfully =>", token);
+            res.status(200).send({user});
+        }
+    })
+});
+
 router.post('/login', (req, res) => {
     let userData = req.body;
     User.findOne({ email: userData.email }, (error, user) => {
@@ -27,7 +43,10 @@ router.post('/login', (req, res) => {
             } else if (user.password !== userData.password) {
                 res.status(401).send('Invalid password');
             } else {
-                res.status(200).send(user);
+                let payload = { subject: user._id };
+                // let token = jwt.sign(payload, 'secretKey');
+                // console.log("Token generated successfully =>", token);
+                res.status(200).send({ user });
             }
         }
     })
@@ -81,30 +100,6 @@ router.get('/special', (req, res) => {
     ]
 
     res.json(events);
-})
-
-router.post('/register', (req, res) => {
-    let userData = req.body;
-    let user = new User(userData);
-    user.save((error, registeredUser) => {
-        if (error) {
-            console.log(error);
-        } else {
-            res.status(200).send(registeredUser);
-        }
-    })
-});
-
-router.post('/register', (req, res) => {
-    let userData = req.body;
-    let user = new User(userData);
-    user.save((error, registeredUser) => {
-        if (error) {
-            console.log(error);
-        } else {
-            res.status(200).send(registeredUser);
-        }
-    })
 })
 
 // style="
