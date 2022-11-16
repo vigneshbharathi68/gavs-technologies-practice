@@ -1,1 +1,10 @@
-<h2>Welcome to Angular!</h2>
+<h2>{{ headerName | uppercase }}</h2>
+<h2>My salary is {{ salary | percent }}</h2>
+<br>
+
+<button (click)="FunctionClick('click here')">Click me</button>
+<br>
+<input type="text" [value]="isDisabled" [disabled]="isDisabled" #txt (change)="FunctionClick(txt.value)">
+<br>
+<br>
+<input type="text" [(ngModel)]="headerName" >
