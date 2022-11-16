@@ -70,6 +70,8 @@ router.post('/login', (req, res) => {
     })
 })
 
+
+
 router.get('/events', (req, res) => {
     let events = [
         {

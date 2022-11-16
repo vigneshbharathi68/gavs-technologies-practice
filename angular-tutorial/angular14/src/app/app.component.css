@@ -1,0 +1,55 @@
+
+nav {
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    padding: 1rem;
+    background-color: #277edb;
+}
+/* Make sure the image tag inside the nav */
+nav img {
+    float: left;
+    /* display: inline-block; */
+    margin-right: 1rem;
+    height: 100%;
+    width: 50px;
+}
+/* select the last div inside nav tag */
+.center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* select the first div inside nav tag */
+nav div:first-of-type {
+    height: 100%;
+    float: left;
+}
+
+nav div:last-of-type {
+    height: 100%;
+    float: right;
+}
+
+/* change the cursor to pointer to all the a tags */
+nav a {
+    /* beautify the a tag like button with animations */
+    padding: 5px;
+    border-radius: 5px;
+    /* change the bg color to blue */
+    color: white;
+    font-weight: semi-bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+/* change the background color of a tag when hover */
+nav a:hover {
+    color: rgb(231, 231, 231);
+}
+
+.content[role="main"] {
+    /* border: 1px solid red; */
+}

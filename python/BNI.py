@@ -29,7 +29,7 @@ for element in trs:
 print("Data -----------------------------------\n", data)
 df = pd.DataFrame(data, columns=['a'])
 
-df.to_excel(r'./bni.xlsx', index=True)
+df.to_excel(r'./bni.xlsx', index=False)
 
 
 #soup = BeautifulSoup(cont.page_source,'lxml')
